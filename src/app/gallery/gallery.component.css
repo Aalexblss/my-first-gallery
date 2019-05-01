@@ -1,0 +1,8 @@
+.card-title {
+  opacity: 0;
+}
+
+.marked {
+  opacity: 3;
+  color: red;
+}

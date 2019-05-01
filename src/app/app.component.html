@@ -1,0 +1,16 @@
+  <div class="container">
+<a class="waves-effect waves-light btn-small" [class.active]="filterBy=='all'" (click)="filterBy='all'">All</a>
+<a class="waves-effect waves-light btn-small" [class.active]="filterBy=='favorite'" (click)="filterBy='favorite'">Favorite</a>
+<div class="count-filter">
+  <a class="waves-effect waves-light btn-small" [class.active]="filterBy=='all'" (click)="coll=8" >8</a>
+  <a class="waves-effect waves-light btn-small" [class.active]="filterBy=='all'" (click)="coll=16" >16</a>
+  <a class="waves-effect waves-light btn-small" [class.active]="filterBy=='all'" (click)="coll=24" >24</a>
+</div>
+  <div class="row">
+  <app-gallery
+  *ngFor="let u of mygallery | filter: filterBy | paginate: {itemsPerPage: coll, currentPage: p}"
+  [user]="u">
+  </app-gallery>
+  </div>
+       <pagination-controls (pageChange)="p =$event"></pagination-controls>
+  </div>
